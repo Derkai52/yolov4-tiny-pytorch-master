@@ -9,7 +9,7 @@ import time
 yolo = YOLO()
 # 调用摄像头
 #capture=cv2.VideoCapture(1) 
-capture=cv2.VideoCapture("1.mp4") 
+capture=cv2.VideoCapture("video.mp4") 
 
 fps = 0.0
 while(True):
