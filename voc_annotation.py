@@ -23,8 +23,8 @@ def convert_annotation(year, image_id, list_file):
             continue
         cls_id = classes.index(cls)
         xmlbox = obj.find('bndbox')
-        b = (int(float(xmlbox.find('xmin').text)), int(float(xmlbox.find('ymin').text)), int(float(xmlbox.find('xmax').text)), int(float(xmlbox.find('ymax').text)))
-        list_file.write(" " + ",".join([str(a) for a in b]) + ',' + str(cls_id))
+        b = (float(xmlbox.find('xmin').text), float(xmlbox.find('ymin').text), float(xmlbox.find('xmax').text), float(xmlbox.find('ymax').text))
+        list_file.write(" " + ",".join([str(a) for a in b]) + ',' + str(cls_id))  # cls_id 表示目标类标号（在classes中的下标）
 
 wd = getcwd()
 
